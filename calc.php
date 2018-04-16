@@ -9,6 +9,7 @@
          * @return number
 */
         
+        //TYPOGRAPHY distance
         function getDistanceInMeters(array $aPoint, array $bPoint){
             $earthRadius = 6371000;// promień Ziemi w metrach
             $diffLat = $aPoint['latitude'] - $bPoint['latitude'];
@@ -23,14 +24,27 @@
             
         }//end getDistanceInMeters
 
-        $a['latitude']=54.360763;
-        $a['longitude']=18.4098512;
+        //CARTOGRAPHIC distance
+        function distanceGeoPoints ($lat1, $lng1, $lat2, $lng2) {
 
-        $b['latitude']=54.5037439;
-        $b['longitude']=18.3233968;
-
-        $c['latitude']=52.232855;
-        $c['longitude']=20.9211115;
+                $earthRadius = 3958.75;
+            
+                $dLat = deg2rad($lat2-$lat1);
+                $dLng = deg2rad($lng2-$lng1);
+            
+            
+                $a = sin($dLat/2) * sin($dLat/2) +
+                   cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+                   sin($dLng/2) * sin($dLng/2);
+                $c = 2 * atan2(sqrt($a), sqrt(1-$a));
+                $dist = $earthRadius * $c;
+            
+                // from miles
+                $meterConversion = 1609;
+                $geopointDistance = $dist * $meterConversion;
+            
+                return $geopointDistance;
+        }
         
         //echo getDistanceInMeters($a, $b).'<br>';
         //echo getDistanceInMeters($a, $c);

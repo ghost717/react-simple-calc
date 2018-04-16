@@ -21,8 +21,10 @@
         $c['latitude']=52.17;
         $c['longitude']=20.9725;
         
-        echo getDistanceInMeters($a, $b).'<br>';
-        echo getDistanceInMeters($a, $c).'<br>';
+    //    echo getDistanceInMeters($a, $b).'<br>';
+    //    echo getDistanceInMeters($a, $c).'<br>';
+
+        echo distanceGeoPoints($a['latitude'], $a['longitude'], $c['latitude'], $c['longitude']).'<br>';;
     ?>
 </body>
 </html>
