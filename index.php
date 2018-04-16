@@ -6,6 +6,10 @@
     <title>React Simple Calc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
@@ -24,7 +28,16 @@
     //    echo getDistanceInMeters($a, $b).'<br>';
     //    echo getDistanceInMeters($a, $c).'<br>';
 
-        echo distanceGeoPoints($a['latitude'], $a['longitude'], $c['latitude'], $c['longitude']).'<br>';;
+    //    echo distanceGeoPoints($a['latitude'], $a['longitude'], $c['latitude'], $c['longitude']).'<br>';;
     ?>
+
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    /* 
+    ADD REACT CODE HERE 
+    */
+    
+    </script>
 </body>
 </html>

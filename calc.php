@@ -41,9 +41,10 @@
             
                 // from miles
                 $meterConversion = 1609;
-                $geopointDistance = $dist * $meterConversion;
-            
-                return $geopointDistance;
+                $geopointDistance = $dist * $meterConversion; //meters
+                $geopointDistance = $geopointDistance / 1000; //km
+                
+                return number_format($geopointDistance, 2);
         }
         
         //echo getDistanceInMeters($a, $b).'<br>';
